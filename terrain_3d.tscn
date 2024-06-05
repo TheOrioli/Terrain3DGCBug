@@ -46,3 +46,4 @@ storage = ExtResource("1_0m7do")
 material = SubResource("Terrain3DMaterial_0lajg")
 texture_list = SubResource("Terrain3DTextureList_x6g0c")
 debug_level = 3
+debug_show_collision = true
