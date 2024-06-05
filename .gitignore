@@ -1,0 +1,35 @@
+# Godot-specific ignores
+.import/
+export.cfg
+*.translation
+.godot/*
+!.godot/extension_list.cfg
+
+addons/**/~*.dll
+
+# Mono-specific ignores
+.mono/
+data_*/
+
+[Bb]uild/
+
+version.txt
+[eE]xamples/
+
+.aseprite_wizard_history
+version.txt
+
+# Ignore the Cache folder since it is updated locally.
+/addons/FMOD/editor/cache
+/FMOD/**/.cache
+
+# Log files can be ignored.
+fmod_editor.log
+
+/FMOD/**/Metadata/ProfilerSession/*
+
+*.csproj.old*
+
+[rR]ecordings/
+
+*.blend1

@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://br8f0q17ba2hw"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_1dvg7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q7vu1"]
+
+[sub_resource type="Sky" id="Sky_rg468"]
+sky_material = SubResource("ProceduralSkyMaterial_q7vu1")
+
+[sub_resource type="Environment" id="Environment_j5i6b"]
+background_mode = 2
+sky = SubResource("Sky_rg468")
+ambient_light_source = 3
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_1dvg7")
+terrainScenePath = "res://terrain_3d.tscn"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.026, 4.85182, 90.6178)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonTerrain" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "SPAWN"
+
+[node name="ButtonColliders" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "REMOVE"
+
+[node name="ButtonClear" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "GC"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j5i6b")
+
+[connection signal="pressed" from="Control/HBoxContainer/ButtonTerrain" to="." method="SpawnTerrain"]
+[connection signal="pressed" from="Control/HBoxContainer/ButtonColliders" to="." method="RemoveTerrain"]
+[connection signal="pressed" from="Control/HBoxContainer/ButtonClear" to="." method="ForceGC"]
