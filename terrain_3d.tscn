@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://csjbrelh41y3b"]
 
-[ext_resource type="Terrain3DStorage" uid="uid://c0ndhvadblv51" path="res://terrain_storage.res" id="1_0m7do"]
+[ext_resource type="Terrain3DStorage" uid="uid://baaegge1yutt6" path="res://new_terrain_3d_storage.res" id="1_qj10x"]
 
 [sub_resource type="Gradient" id="Gradient_ivxyk"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -25,6 +25,7 @@ noise = SubResource("FastNoiseLite_u4lhn")
 
 [sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_0lajg"]
 _shader_parameters = {
+"_mouse_layer": 2147483648,
 "blend_sharpness": 0.87,
 "height_blending": true,
 "macro_variation1": Color(1, 1, 1, 1),
@@ -34,15 +35,14 @@ _shader_parameters = {
 "noise1_scale": 0.04,
 "noise2_scale": 0.076,
 "noise3_scale": 0.225,
-"noise_texture": SubResource("NoiseTexture2D_v20ef"),
-"vertex_normals_distance": 128.0
+"noise_texture": SubResource("NoiseTexture2D_v20ef")
 }
 show_checkered = true
 
 [sub_resource type="Terrain3DTextureList" id="Terrain3DTextureList_x6g0c"]
 
 [node name="Terrain3D" type="Terrain3D"]
-storage = ExtResource("1_0m7do")
+storage = ExtResource("1_qj10x")
 material = SubResource("Terrain3DMaterial_0lajg")
 texture_list = SubResource("Terrain3DTextureList_x6g0c")
 debug_level = 3
